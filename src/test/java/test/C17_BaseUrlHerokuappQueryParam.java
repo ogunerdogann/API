@@ -40,12 +40,12 @@ public class C17_BaseUrlHerokuappQueryParam extends HerokuAppBaseUrl {
         ve Response’ta 2638 id'ye sahip bir booking oldugunu test edin
      */
         //1-Url hazirla
-        specJsonPlace.pathParam("pp1","booking");
+        specHerokuApp.pathParam("pp1","booking");
 
         //2- Expected Data hazirla
 
         //3-Response'i kaydet
-        Response response = given().spec(specJsonPlace).when().get("/{pp1}");
+        Response response = given().spec(specHerokuApp).when().get("/{pp1}");
         response.prettyPrint();
 
         //4- Assertion
@@ -64,12 +64,12 @@ public class C17_BaseUrlHerokuappQueryParam extends HerokuAppBaseUrl {
         status code’unun 200 oldugunu ve “Eric” ismine sahip en az bir booking oldugunu test edin
     */
         //1- Url hazirla
-        specJsonPlace.pathParam("pp1","booking").queryParam("firstname","Eric");
+        specHerokuApp.pathParam("pp1","booking").queryParam("firstname","Eric");
 
         //2- Expected Data Hazirla
 
         //3- Response'i kaydet
-        Response response = given().spec(specJsonPlace).get("/{pp1}");
+        Response response = given().spec(specHerokuApp).get("/{pp1}");
         response.prettyPrint();
 
         //4- Assertion
@@ -91,14 +91,14 @@ public class C17_BaseUrlHerokuappQueryParam extends HerokuAppBaseUrl {
     */
 
         //1- url Hazirla
-        specJsonPlace.pathParam("pp1","booking")
+        specHerokuApp.pathParam("pp1","booking")
                 .queryParam("firstname","Jim")
                 .queryParam("lastname","Jackson");
 
         //2- Expected Data Hazirla
 
         //3- Response'i kaydet
-        Response response = given().spec(specJsonPlace).when().get("/{pp1}");
+        Response response = given().spec(specHerokuApp).when().get("/{pp1}");
         response.prettyPrint();
 
         //4-Assertion

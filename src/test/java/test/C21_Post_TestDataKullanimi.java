@@ -6,7 +6,6 @@ import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.json.JSONObject;
-import org.junit.Assert;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
@@ -53,7 +52,7 @@ public class C21_Post_TestDataKullanimi extends HerokuAppBaseUrl {
     public void post01(){
 
         //1-Url ve request body hazirla
-        specJsonPlace.pathParam("pp1","booking");
+        specHerokuApp.pathParam("pp1","booking");
 
         TestDataHerokuApp testDataHerokuApp = new TestDataHerokuApp();
         JSONObject reqBody = testDataHerokuApp.requestBodyOlusturJSON();
@@ -65,7 +64,7 @@ public class C21_Post_TestDataKullanimi extends HerokuAppBaseUrl {
 
         //3- Response'i kaydet
         Response response = given()
-                .spec(specJsonPlace)
+                .spec(specHerokuApp)
                 .contentType(ContentType.JSON)
                 .when()
                 .body(reqBody.toString())

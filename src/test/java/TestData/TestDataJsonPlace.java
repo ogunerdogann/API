@@ -2,6 +2,10 @@ package TestData;
 
 import org.json.JSONObject;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+
 public class TestDataJsonPlace {
 
     public int basariliStatusKodu = 200;
@@ -28,5 +32,16 @@ public class TestDataJsonPlace {
        reqBody.put("userId",10);
        reqBody.put("id",70);
        return reqBody;
+   }
+
+   public HashMap requestBodyOlusturMap(){
+
+       HashMap<String , Object> reqBody = new HashMap<>();
+       // ilk datalarimizin hepsi String ama ikinciler int veya boolean da olabiliyor. O nedenle böyle yaptik.
+       reqBody.put("title","Ahmet");
+       reqBody.put("body","Merhaba");
+       reqBody.put("userId",10.0);
+       reqBody.put("id",70.0);
+        return reqBody;
    }
 }

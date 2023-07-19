@@ -35,12 +35,12 @@ public class C16_BaseUrlHerokuApp extends HerokuAppBaseUrl {
     public void get01(){
 
         //1- url hazirla
-        specJsonPlace.pathParam("pp1","booking");
+        specHerokuApp.pathParam("pp1","booking");
 
         //2- Expected Data hazirla
 
         //3-Response'i kaydet
-        Response response = given().spec(specJsonPlace).when().get("/{pp1}");
+        Response response = given().spec(specHerokuApp).when().get("/{pp1}");
         response.prettyPrint();
 
         //4- Assertion
@@ -51,7 +51,7 @@ public class C16_BaseUrlHerokuApp extends HerokuAppBaseUrl {
     public void post01(){
 
         //1- Url ve responseBody'yi hazirla
-        specJsonPlace.pathParam("pp1","booking");
+        specHerokuApp.pathParam("pp1","booking");
         JSONObject bookingDates = new JSONObject();
         bookingDates.put("checkin","2021-06-01");
         bookingDates.put("checkout","2021-06-10");
@@ -68,7 +68,7 @@ public class C16_BaseUrlHerokuApp extends HerokuAppBaseUrl {
 
         //3-Response'i kaydet
         Response response = given()
-                    .spec(specJsonPlace)
+                    .spec(specHerokuApp)
                     .contentType(ContentType.JSON)
                 .when()
                      .body(reqBody.toString())
