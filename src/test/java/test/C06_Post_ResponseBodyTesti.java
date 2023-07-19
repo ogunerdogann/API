@@ -49,7 +49,7 @@ public class C06_Post_ResponseBodyTesti {
 
         // 2- Expected Data Hazirla
 
-        // 3- REsponse'i kaydet
+        // 3- Response'i kaydet
 
         Response response = given()
                                  .contentType(ContentType.JSON)
