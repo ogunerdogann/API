@@ -51,4 +51,31 @@ public class JsonPlaceRequestBodyPOJO {
     public void setId(int id) {
         this.id = id;
     }
+
+    //3- Tüm parametreleri iceren Constructor olusturmak
+
+    public JsonPlaceRequestBodyPOJO(String title, String body, int userId, int id) {
+        this.title = title;
+        this.body = body;
+        this.userId = userId;
+        this.id = id;
+    }
+
+    //4-Parametresiz constructor olustur
+
+    public JsonPlaceRequestBodyPOJO() {
+    }
+
+    //5- toString() Methodu olustur
+
+    @Override
+    public String toString() {
+        return "JsonPlaceRequestBodyPOJO{" +
+                "title='" + title + '\'' + // {title='Ahmet', body='Merhaba', userId=70, id=3} yani Map gibi yaziyor
+                ", body='" + body + '\'' +
+                ", userId=" + userId +
+                ", id=" + id +
+                '}';
+    }
+
 }
